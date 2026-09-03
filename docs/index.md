@@ -2,172 +2,112 @@
 icon: lucide/rocket
 ---
 
-# Get started
+# Bienvenue 👋
 
-For full documentation visit [zensical.org](https://zensical.org/docs/).
+![Bannière CUB](https://raw.githubusercontent.com/FireToak/cub-docs/main/docs/assets/banniere_cub.png)
 
-## Commands
+---
 
-* [`zensical new`][new] - Create a new project
-* [`zensical serve`][serve] - Start local web server
-* [`zensical build`][build] - Build your site
+## 1. 🧭 Contexte
 
-  [new]: https://zensical.org/docs/usage/new/
-  [serve]: https://zensical.org/docs/usage/preview/
-  [build]: https://zensical.org/docs/usage/build/
+Le projet CUB concerne une entreprise spécialisée dans l'incubation de startups, disposant d'un siège social à Paris et de multiples agences internationales. Face aux évolutions de son infrastructure et aux menaces de cybersécurité comme le malware Emotet, la Direction des Systèmes d'Information déploie une refonte de son architecture réseau. Cette évolution s'articule autour d'une segmentation stricte des réseaux (VLAN, DMZ) et du remplacement des anciens pare-feux par des solutions de gestion unifiée des menaces (UTM) Stormshield, tout en appliquant les recommandations de l'ANSSI pour garantir la protection et la souveraineté des données.
 
-## Examples
+---
 
-### Admonitions
+## 2. 🗺️ Navigation
 
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/)
+La présente documentation est séparée en 4 modules : [Administration et supervision des réseaux](./administration-supervision-reseaux/index.md), [Administration Windows](./administration-windows/index.md), [Cybersécurité](./cybersecurite/index.md) et [Exploitation des services](./exploitation-services/index.md). Dans chaque module, vous retrouverez un dossier par technologie déployée qui contient toutes les procédures liées à cette technologie mise en place.
 
-!!! note
+---
 
-    This is a **note** admonition. Use it to provide helpful information.
+## 3. 📚 Contenu
 
-!!! warning
+<!-- 
+NE PAS SUPPRIMER CE COMMENTAIRE !!!
 
-    This is a **warning** admonition. Be careful!
+Message pour l'ia : Tu mets à jour avec les informations données en entrée dans le prompt et en utilisant la structure suivante
 
-### Details
+### [Nom de la compétence principale]
 
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/#collapsible-blocks)
+* **[Sous-compétence mobilisée]** : justification
+-->
 
-??? info "Click to expand for more info"
+### Cybersécurité
 
-    This content is hidden until you click to expand it.
-    Great for FAQs or long explanations.
+* **Stormshield UTM** : implémentation d'une solution de sécurité unifiée pour assurer le filtrage applicatif et contrer les menaces avancées.
 
-## Code Blocks
+### Administration et supervision des réseaux
 
-> Go to [documentation](https://zensical.org/docs/authoring/code-blocks/)
+* **Segmentation réseau (VLAN)** : Cloisonnement du réseau local des agences (Production, Clients, Administration) afin de réduire la surface d'exposition aux attaques, selon les recommandations de l'ANSSI.
+* **Routage et adressage public** : Implémentation du plan d'adressage IPv4 LIR de CUB (192.36.253.0/24) et configuration des liaisons inter-agences.
 
-``` python hl_lines="2" title="Code blocks"
-def greet(name):
-    print(f"Hello, {name}!") # (1)!
+### Administration Windows
 
-greet("Python")
+* **Postes clients Windows** : Gestion et intégration des postes de travail utilisateurs (Windows Client) répartis dans les réseaux locaux des différentes agences de l'incubateur.
+
+### Exploitation des services
+
+* **Serveurs DNS (Debian)** : Déploiement et administration des serveurs DNS maîtres et esclaves situés en DMZ pour assurer la résolution de noms de domaine de chaque agence.
+* **Serveurs Web (Debian)** : Hébergement et maintien en conditions opérationnelles des services web vitrines de l'entreprise sur l'ensemble des sites.
+
+---
+
+## 4. 🧠 Compétences du référentiel de BTS SIO
+
+### Gérer le patrimoine informatique
+
+* **Recenser et identifier les ressources numériques** : Cartographie des services présents sur le réseau local et analyse de l'adressage IP des différentes agences CUB.
+
+### Mettre à disposition des utilisateurs un service informatique
+
+* **Déployer un service** : Intégration logique et physique des nouvelles appliances UTM et des serveurs Debian (Web/DNS) au sein des DMZ de l'architecture.
+
+### Répondre aux incidents et aux demandes d’assistance et d’évolution
+
+* **Traiter des demandes concernant les services réseau et système, applicatifs** : Conception de maquettes Packet Tracer et schémas logiques pour répondre aux besoins d'évolution sécuritaire exigés par le service RSSI.
+
+---
+
+## 5. 🛠️ Comment utiliser la documentation ?
+
+Ce site de documentation est généré automatiquement à partir de fichiers Markdown hébergés depuis le dépôt : [cub-docs](https://github.com/FireToak/cub-docs)
+
+### 5.2 ✏️ Modifier la documentation
+
+Pour contribuer ou mettre à jour la documentation, suivez cette procédure Git standard :
+
+1. Cloner le dépôt en local :
+
+```bash
+git clone https://github.com/FireToak/cub-docs.git
+cd cub-docs
 ```
 
-1.  > Go to [documentation](https://zensical.org/docs/authoring/code-blocks/#code-annotations)
+2. Créer ou modifier les fichiers : éditez les fichiers .md situés dans l'arborescence correspondante.
+3. Indexer les modifications :
 
-    Code annotations allow to attach notes to lines of code.
-
-Code can also be highlighted inline: `#!python print("Hello, Python!")`.
-
-## Content tabs
-
-> Go to [documentation](https://zensical.org/docs/authoring/content-tabs/)
-
-=== "Python"
-
-    ``` python
-    print("Hello from Python!")
-    ```
-
-=== "Rust"
-
-    ``` rs
-    println!("Hello from Rust!");
-    ```
-
-## Diagrams
-
-> Go to [documentation](https://zensical.org/docs/authoring/diagrams/)
-
-``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
+```bash
+git add .
 ```
 
-## Footnotes
+4. Créer un commit descriptif :
 
-> Go to [documentation](https://zensical.org/docs/authoring/footnotes/)
+```bash
+git commit -m "docs: ajout de la procédure de réinitialisation du routeur"
+```
 
-Here's a sentence with a footnote.[^1]
+5. Pousser les modifications :
 
-Hover it, to see a tooltip.
+```bash
+git push origin main
+```
 
-[^1]: This is the footnote.
+*Une fois le `push` effectué, la chaîne CI/CD via GitHub Actions compilera automatiquement les fichiers et déploiera la nouvelle version du site MkDocs.*
 
+---
 
-## Formatting
+## 👥 6. Auteur
 
-> Go to [documentation](https://zensical.org/docs/authoring/formatting/)
+Ce contexte est réalisé par un étudiant du BTS SIO du lycée Paul-Louis Courier (Tours).
 
-- ==This was marked (highlight)==
-- ^^This was inserted (underline)^^
-- ~~This was deleted (strikethrough)~~
-- H~2~O
-- A^T^A
-- ++ctrl+alt+del++
-
-## Icons, Emojis
-
-> Go to [documentation](https://zensical.org/docs/authoring/icons-emojis/)
-
-* :sparkles: `:sparkles:`
-* :rocket: `:rocket:`
-* :tada: `:tada:`
-* :memo: `:memo:`
-* :eyes: `:eyes:`
-
-## Maths
-
-> Go to [documentation](https://zensical.org/docs/authoring/math/)
-
-$$
-\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
-$$
-
-!!! warning "Needs configuration"
-    Note that MathJax is included via a `script` tag on this page and is not
-    configured in the generated default configuration to avoid including it
-    in a pages that do not need it. See the documentation for details on how
-    to configure it on all your pages if they are more Maths-heavy than these
-    simple starter pages.
-
-<script id="MathJax-script" src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [["\\(", "\\)"]],
-      displayMath: [["\\[", "\\]"]],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      ignoreHtmlClass: ".*|",
-      processHtmlClass: "arithmatex"
-    }
-  };
-
-  document$.subscribe(() => {
-    MathJax.startup.output.clearCache()
-    MathJax.typesetClear()
-    MathJax.texReset()
-    MathJax.typesetPromise()
-  })
-</script>
-
-## Task Lists
-
-> Go to [documentation](https://zensical.org/docs/authoring/lists/#using-task-lists)
-
-* [x] Install Zensical
-* [x] Configure `zensical.toml`
-* [x] Write amazing documentation
-* [ ] Deploy anywhere
-
-## Tooltips
-
-> Go to [documentation](https://zensical.org/docs/authoring/tooltips/)
-
-[Hover me][example]
-
-  [example]: https://example.com "I'm a tooltip!"
+* **Louis MEDO** : [LinkedIn](https://www.linkedin.com/in/louismedo/) | [Portfolio](https://louis.loutik.fr) | [GitHub](https://github.com/FireToak) | [Mail](mailto:louis.medo@loutik.fr)
