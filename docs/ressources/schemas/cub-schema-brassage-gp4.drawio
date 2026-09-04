@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0">
   <diagram id="0" name="CUB - Schéma brassage GP4">
-    <mxGraphModel dx="2020" dy="1201" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="566" dy="336" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1247,9 +1247,6 @@
         <mxCell id="TJyV3hpdB_4cO7n5Wztm-323" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=1;right=1;left=1;top=0;routingCenterX=-0.5;rotation=0;strokeWidth=4;" value="" vertex="1">
           <mxGeometry height="20" width="244.33" x="1073.5" y="934" as="geometry" />
         </mxCell>
-        <mxCell id="TJyV3hpdB_4cO7n5Wztm-324" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;rotation=0;fontColor=light-dark(#FFFFFF,#FFFFFF);" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;INTERCONNEXION&lt;/span&gt;" vertex="1">
-          <mxGeometry height="20" width="190" x="1103.54" y="959" as="geometry" />
-        </mxCell>
         <mxCell id="TJyV3hpdB_4cO7n5Wztm-325" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=1;right=1;left=1;top=0;routingCenterX=-0.5;rotation=0;strokeWidth=4;" value="" vertex="1">
           <mxGeometry height="20" width="244.33" x="829" y="934" as="geometry" />
         </mxCell>
@@ -1348,6 +1345,9 @@
         </mxCell>
         <mxCell id="6S-KF17PZZ02ek8swYpz-304" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="VLAN 84 DMZ" vertex="1">
           <mxGeometry height="20" width="164" x="489" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="buPfHlB1vKvAJDwtSUCP-303" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;rotation=0;" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;INTERCONNEXION&lt;/span&gt;" vertex="1">
+          <mxGeometry height="20" width="190" x="1100.67" y="959" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

@@ -1,4 +1,4 @@
-# Plan d'adressage
+# Schémas
 
 ![Bannière CUB](https://raw.githubusercontent.com/FireToak/cub-docs/main/docs/assets/banniere_cub.png)
 
