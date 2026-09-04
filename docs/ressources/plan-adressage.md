@@ -18,8 +18,6 @@
 - [2. Contexte](#2-contexte)
 - [3. Plan d'adressage](#3-plan-dadressage)
 - [4. Calcul du plan d'adressage](#4-calcul-du-plan-dadressage)
-  - [4.1. Figure 1 - Tableau des valeurs des puissances de 2](#41-figure-1---tableau-des-valeurs-des-puissances-de-2)
-  - [4.2. Calcul du réseau Production](#42-calcul-du-réseau-production)
 
 ## 2. Contexte
 
@@ -53,28 +51,31 @@ Ce document définit le plan d'adressage IP (IPv4) de l'infrastructure réseau. 
 
 **1. Trouver la puissance de 2 (bits d'hôtes)**
 Pour héberger un besoin d'au moins 121 hôtes, il faut trouver la puissance de 2 permettant d'obtenir ce nombre de machines (en retirant l'adresse réseau et l'adresse de broadcast) :
-* Équation : `2^x - 2 >= 121`
-* Calcul : `2^7 - 2 = 126` (qui est >= 121)
-* Il faut donc **7 bits** réservés pour les hôtes.
+
+- Équation : `2^x - 2 >= 121`
+- Calcul : `2^7 - 2 = 126` (qui est >= 121)
+- Il faut donc **7 bits** réservés pour les hôtes.
 
 **2. Déterminer le préfixe CIDR**
 Le préfixe définit la partie réseau. Une adresse IPv4 comportant 32 bits au total :
-* Calcul : `32 bits - 7 bits = 25 bits`
-* Le CIDR est donc **/25**.
+
+- Calcul : `32 bits - 7 bits = 25 bits`
+- Le CIDR est donc **/25**.
 
 **3. Calculer le masque de sous-réseau en décimal**
 Le CIDR /25 signifie que les 25 premiers bits du masque sont à 1 :
-* Notation binaire : `11111111 . 11111111 . 11111111 . 10000000`
-* Conversion d'un octet plein (`11111111`) : Addition des poids `128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255`.
-* Conversion du dernier octet (`10000000`) : Seul le premier bit est actif, son poids est de `128`.
-* Masque décimal : **255.255.255.128**
+
+- Notation binaire : `11111111 . 11111111 . 11111111 . 10000000`
+- Conversion d'un octet plein (`11111111`) : Addition des poids `128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255`.
+- Conversion du dernier octet (`10000000`) : Seul le premier bit est actif, son poids est de `128`.
+- Masque décimal : **255.255.255.128**
 
 **4. Déterminer la plage d'adresses**
 L'adresse réseau de départ est `192.168.4.0`. Le pas du sous-réseau (nombre total d'adresses dans le bloc) est de `2^7 = 128`.
 
-* **Adresse de broadcast :** C'est la dernière adresse du bloc, soit l'adresse réseau à laquelle on ajoute toutes les valeurs d'hôtes possibles (`128 - 1 = 127`).
-  * `192.168.4.0 + 127 = 192.168.4.127`
-* **Première IP utilisable :** C'est l'adresse réseau incrémentée de 1.
-  * `192.168.4.0 + 1 = 192.168.4.1`
-* **Dernière IP utilisable :** C'est l'adresse de broadcast décrémentée de 1.
-  * `192.168.4.127 - 1 = 192.168.4.126`
+- **Adresse de broadcast :** C'est la dernière adresse du bloc, soit l'adresse réseau à laquelle on ajoute toutes les valeurs d'hôtes possibles (`128 - 1 = 127`).
+  - `192.168.4.0 + 127 = 192.168.4.127`
+- **Première IP utilisable :** C'est l'adresse réseau incrémentée de 1.
+  - `192.168.4.0 + 1 = 192.168.4.1`
+- **Dernière IP utilisable :** C'est l'adresse de broadcast décrémentée de 1.
+  - `192.168.4.127 - 1 = 192.168.4.126`

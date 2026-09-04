@@ -21,6 +21,7 @@ CONTRAINTES DE SORTIE :
 ![Bannière CUB](https://raw.githubusercontent.com/FireToak/cub-docs/main/docs/assets/banniere_cub.png)
 
 ---
+
 ## Informations
 
 - **Auteur :** Louis MEDO
@@ -28,6 +29,7 @@ CONTRAINTES DE SORTIE :
 - **Domaine :** [Domaine]
 
 ---
+
 ## 1. Sommaire
 
 [Génère un sommaire]
@@ -44,6 +46,7 @@ CONTRAINTES DE SORTIE :
     Exemple de commande
     ```
 
-	* `[Exemple]` : [Description de l'argument dans la commande]
-    * `[Exemple]` : [Description de l'argument dans la commande]
+    - `[Exemple]` : [Description de l'argument dans la commande]
+    - `[Exemple]` : [Description de l'argument dans la commande]
+
 ```
