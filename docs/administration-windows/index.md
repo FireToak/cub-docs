@@ -1,6 +1,6 @@
 # Administration Windows
 
-![Bannière CUB](https://raw.githubusercontent.com/FireToak/cub-docs/main/docs/assets/banniere_cub.png)
+![Bannière CUB](https://cub.bts.loutik.fr/assets/banniere_cub.png)
 
 ## Contenu de la section
 
