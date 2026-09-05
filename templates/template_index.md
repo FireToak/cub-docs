@@ -16,7 +16,7 @@ CONTRAINTES DE SORTIE :
 ```markdown
 # 📘 Documentation d'infrastructure - CUB
 
-![Bannière CUB](https://raw.githubusercontent.com/FireToak/cub-docs/main/docs/assets/banniere_cub.png)
+![Bannière CUB](https://cub.bts.loutik.fr/assets/banniere_cub.png)
 
 ---
 ## 1. 🧭 Contexte

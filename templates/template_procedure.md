@@ -18,7 +18,7 @@ CONTRAINTES DE SORTIE :
 ```markdown
 # [Titre de la procédure]
 
-![Bannière CUB](https://raw.githubusercontent.com/FireToak/cub-docs/main/docs/assets/banniere_cub.png)
+![Bannière CUB](https://cub.bts.loutik.fr/assets/banniere_cub.png)
 
 ---
 
