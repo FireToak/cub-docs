@@ -26,3 +26,7 @@
 
 - **PDF :** [Schéma de brassage de l'infrastructure CUB (PDF)](./schemas/cub-schema-brassage-gp4.pdf)
 - **Fichier draw.io :** [Schéma logique de l'infrastructure CUB (DRAWIO)](./schemas/cub-schema-logique-gp4.drawio)
+
+## Maquette Cisco Packet Tracer de l'infrastructure
+
+- **Fichier .pkt :** [Maquette de l'infrastructure CUB (PKT)](./maquettes/cub-maquette-infrastructure-gp4.pkt)
