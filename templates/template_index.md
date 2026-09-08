@@ -13,7 +13,7 @@ CONTRAINTES DE SORTIE :
 - Aucun commentaire, introduction ou conclusion de ta part n'est autorisé.
 - L'image Markdown doit toujours être présente.
 
-```markdown
+``````markdown
 # 📘 Documentation d'infrastructure - CUB
 
 ![Bannière CUB](https://cub.bts.loutik.fr/assets/banniere_cub.png)
@@ -95,4 +95,4 @@ Ce contexte est réalisé par un étudiant du BTS SIO du lycée Paul-Louis Couri
 
 * **Louis MEDO** : [LinkedIn](https://www.linkedin.com/in/louismedo/) | [Portfolio](https://louis.loutik.fr) | [GitHub](https://github.com/FireToak) | [Mail](mailto:louis.medo@loutik.fr)
 
-```
+``````
