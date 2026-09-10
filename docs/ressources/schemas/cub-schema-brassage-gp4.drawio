@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0">
   <diagram id="0" name="CUB - Schéma brassage GP4">
-    <mxGraphModel dx="1212" dy="736" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1471" dy="894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1182,7 +1182,7 @@
             <mxPoint x="1255.91" y="283" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XdFaxx4Gi_AaFPBNHOkT-318" edge="1" parent="1" source="C-60Kli5zNdrJozrYpTs-742" style="endArrow=none;html=1;rounded=0;exitX=0.729;exitY=-0.024;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;dashPattern=1 1;strokeWidth=4;entryX=0.495;entryY=1.015;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#60a917;strokeColor=#2D7600;" target="C-60Kli5zNdrJozrYpTs-595" value="">
+        <mxCell id="XdFaxx4Gi_AaFPBNHOkT-318" edge="1" parent="1" source="C-60Kli5zNdrJozrYpTs-742" style="endArrow=none;html=1;rounded=0;exitX=0.729;exitY=-0.024;exitDx=0;exitDy=0;exitPerimeter=0;strokeWidth=4;entryX=0.495;entryY=1.015;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#60a917;strokeColor=#2D7600;" target="C-60Kli5zNdrJozrYpTs-595" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <Array as="points">
               <mxPoint x="1000" y="420" />
@@ -1192,7 +1192,7 @@
             <mxPoint x="1015.25" y="324" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TJyV3hpdB_4cO7n5Wztm-304" edge="1" parent="1" source="C-60Kli5zNdrJozrYpTs-888" style="endArrow=box;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=5;startArrow=box;startFill=0;endFill=0;fillColor=#1ba1e2;strokeColor=#006EAF;entryX=0.163;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;dashPattern=1 1;" target="C-60Kli5zNdrJozrYpTs-802" value="">
+        <mxCell id="TJyV3hpdB_4cO7n5Wztm-304" edge="1" parent="1" source="C-60Kli5zNdrJozrYpTs-888" style="endArrow=box;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=5;startArrow=box;startFill=0;endFill=0;fillColor=#1ba1e2;strokeColor=#006EAF;entryX=0.163;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;" target="C-60Kli5zNdrJozrYpTs-802" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <Array as="points">
               <mxPoint x="600" y="730" />
