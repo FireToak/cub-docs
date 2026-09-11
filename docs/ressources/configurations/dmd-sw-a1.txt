@@ -1,0 +1,298 @@
+Current configuration : 7064 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname dmd-sw-a01
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+!
+no aaa new-model
+system mtu routing 1500
+!
+!
+no ip domain-lookup
+!
+!         
+crypto pki trustpoint TP-self-signed-3205233280
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3205233280
+ revocation-check none
+ rsakeypair TP-self-signed-3205233280
+!
+!
+crypto pki certificate chain TP-self-signed-3205233280
+ certificate self-signed 01
+  30820243 308201AC A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 33323035 32333332 3830301E 170D3933 30333031 30303031 
+  30395A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 32303532 
+  33333238 3030819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 
+  8100C168 E6F503B7 29AAA5DF 1EAA7706 C74278CF 78C0B320 24803F50 93122B49 
+  80EDD494 0D70440A C5F0ABC3 6BC5158A 55D0BC2B ECB1BC4F 2C16A9D0 730D6058 
+  541E2170 28FCFB5F B8C2ED0E 1C1B2EE7 1F9BEB26 91B3889F 0108564E B5BD593A 
+  5B90DD1C C870E6AD F20D7615 C5F0CA1F 41098F77 FC4E4840 A0611187 849230ED 
+  0FA50203 010001A3 6B306930 0F060355 1D130101 FF040530 030101FF 30160603 
+  551D1104 0F300D82 0B646D64 2D73772D 6130312E 301F0603 551D2304 18301680 
+  140DF1F3 8B0D160A 4B686C82 2C186ABA D3D8A9DF 65301D06 03551D0E 04160414 
+  0DF1F38B 0D160A4B 686C822C 186ABAD3 D8A9DF65 300D0609 2A864886 F70D0101 
+  04050003 8181006D 07B0207A 39A833D0 45A44C91 FF4FA414 CE9975B8 B6E748D0 
+  C99D3672 7984F8A4 2999F456 BDC85284 E5C7282B FF6CC514 E0F43C59 E05D616A 
+  AEDBD8AC AECE2362 26004839 ABB35850 1815B3D2 DC885BCA 22987B28 8A02E9C4 
+  54433360 BA5BD187 2E77DD35 1EE377AA 769CF77F 76E869A9 8F2D5D78 D761E4B1 
+  5C75AF33 21069C
+  quit
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+interface FastEthernet0/1
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/2
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/3
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/4
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/5
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/6
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/7
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/8
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/9
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/10
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/11
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!         
+interface FastEthernet0/12
+ description Espace Administration
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!         
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface FastEthernet0/25
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/26
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/27
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/28
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/29
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/30
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/31
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/32
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/33
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/34
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/35
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/36
+ description Espace Clients
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!         
+interface FastEthernet0/37
+!
+interface FastEthernet0/38
+!
+interface FastEthernet0/39
+!
+interface FastEthernet0/40
+!
+interface FastEthernet0/41
+!
+interface FastEthernet0/42
+!
+interface FastEthernet0/43
+!
+interface FastEthernet0/44
+!
+interface FastEthernet0/45
+!
+interface FastEthernet0/46
+!
+interface FastEthernet0/47
+!
+interface FastEthernet0/48
+ description Uplink Trunk vers SW_L3_Dortmund Gi1/0/22
+ switchport trunk allowed vlan 10,20
+ switchport mode trunk
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address dhcp
+ no ip route-cache
+!
+ip http server
+ip http secure-server
+!
+line con 0
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+end

@@ -19,13 +19,12 @@ CONTRAINTES DE SORTIE :
 
 Documentation des admonitions :
 
-!!! note "Titre de la note"
+> [!note] Titre de la note
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+> nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+> massa, nec semper lorem quam in massa.
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
-
-Support types : note, abstract, info, tip, success, question, warning, failure, danger, bug, example, quote
+Support types : note, abstract, info, tip, success, question, warning, failure, danger, bug, example, quot
 
 Documentation des code blocs :
 

@@ -16,10 +16,10 @@
 
 Validation de l'infrastructure réseau autour du pare-feu Stormshield (Couches 3 et 4 du modèle OSI). L'objectif est de certifier les règles de translation d'adresses (NAT) autorisant internet pour le LAN, l'absence de NAT pour la zone DMZ, ainsi que l'accès exclusif aux interfaces de management (SSH/HTTPS) pour le VLAN Administration.
 
-!!! info "Rappel de la topologie d'adressage"
-    - **DMZ (VLAN 84) :** `192.36.4.0/24`
-    - **LAN (Production/Clients) :** `192.168.4.0/25` et `192.168.4.128/26`
-    - **Administration (VLAN 20) :** `192.168.4.192/28`
+> [!info] "Rappel de la topologie d'adressage"
+> - **DMZ (VLAN 84) :** `192.36.4.0/24`
+> - **LAN (Production/Clients) :** `192.168.4.0/25` et `192.168.4.128/26`
+> - **Administration (VLAN 20) :** `192.168.4.192/28`
 
 ## 2. Procédures de validation
 
@@ -84,8 +84,8 @@ listening on mvneta0, link-type EN10MB (Ethernet), capture size 262144 bytes
 16:24:44.594459 IP 8.8.8.8 > 192.36.4.1: ICMP echo reply, id 1, seq 42, length 40
 ```
 
-!!! success "Critère de réussite"
-    L'adresse IP source lisible dans la capture doit rester l'IP privée de la machine en DMZ (ex: `192.36.4.1`).
+> [!success] "Critère de réussite"
+> L'adresse IP source lisible dans la capture doit rester l'IP privée de la machine en DMZ (ex: `192.36.4.1`).
 
 **Statut :**
 
