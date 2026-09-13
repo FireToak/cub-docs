@@ -1,5 +1,5 @@
 [project]
-site_url = "cub.bts.loutik.fr"
+site_url = "https://cub.bts.loutik.fr"
 site_name = "Documentation infrastructure - CUB"
 site_description = "Documentation du contexte CUB du BTS SIO Paul-Louis Courier."
 site_author = "Louis MEDO "
