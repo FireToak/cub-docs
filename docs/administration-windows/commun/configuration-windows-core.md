@@ -136,20 +136,26 @@ Rename-Computer -NewName "ServeurAD0" -Restart
 * `-NewName` : Indique le nouveau nom d'hôte de la machine.
 * `-Restart` : Force le redémarrage immédiat de l'OS pour appliquer le nouveau nom.
 
-## 6. Sécurisation (Recommandations ANSSI)
+## 6. Sécurisation
 
 6.1. **Configuration de la synchronisation temporelle (NTP).** Utilisation du pool NTP français.
 
 ```cmd
-w32tm /config /manualpeerlist:"0.fr.pool.ntp.org,0x1 1.fr.pool.ntp.org,0x1" /syncfromflags:manual /update; Restart-Service w32time
-
+w32tm /config /manualpeerlist:"pool.ntp.org time.windows.com time.google.com" /syncfromflags:manual /reliable:yes /update
+net stop w32time
+net start w32time
+w32tm /resync
 ```
 
+Voici la mise à jour des explications correspondant à vos commandes :
+
 * `/config` : Indique la volonté de modifier la configuration du service de temps Windows.
-* `/manualpeerlist:` : Liste les serveurs NTP externes. Le paramètre `0x1` définit l'intervalle d'interrogation.
-* `/syncfromflags:manual` : Oblige le système à utiliser la liste des serveurs définie manuellement.
-* `/update` : Applique les nouveaux paramètres à l'instance en cours d'exécution.
-* `Restart-Service` : Commande PowerShell redémarrant le service `w32time`.
+* `/manualpeerlist:` : Définit la liste des serveurs NTP externes à utiliser (séparés par des espaces).
+* `/syncfromflags:manual` : Oblige le système à utiliser uniquement la liste des serveurs définie manuellement, ignorant les autres sources comme le domaine ou le matériel.
+* `/reliable:yes` : Marque cet ordinateur comme une source de temps fiable (utile si cette machine doit synchroniser d'autres appareils sur le réseau).
+* `/update` : Applique immédiatement les nouveaux paramètres à l'instance en cours d'exécution du service.
+* `net stop w32time` et `net start w32time` : Commands natives pour arrêter puis démarrer le service de temps Windows, assurant un redémarrage propre pour prendre en compte les changements.
+* `w32tm /resync` : Force une synchronisation immédiate avec les serveurs configurés sans attendre le prochain cycle automatique.
 
 6.2. **Vérification de l'activation de l'UAC.** L'UAC (User Account Control) doit être activé (valeur à 1).
 
