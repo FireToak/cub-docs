@@ -1,6 +1,4 @@
-Current configuration : 8582 bytes
-!
-! Last configuration change at 16:26:25 CEST Fri Sep 11 2026 by perennial
+! Last configuration change at 16:15:44 CEST Fri Sep 18 2026 by perennial
 !
 version 17.6
 service timestamps debug datetime msec
@@ -37,19 +35,25 @@ switch 1 provision c9200l-24t-4g
 !
 !
 !
-!         
+!
 ip routing
 !
 no ip domain lookup
 ip domain name dmd-sw-c1.local.agence.cub.sioplc.fr
 !
-!
+!         
 !
 login on-success log
 !
 crypto pki trustpoint SLA-TrustPoint
  enrollment pkcs12
  revocation-check crl
+!
+crypto pki trustpoint TP-self-signed-2981755655
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2981755655
+ revocation-check none
+ rsakeypair TP-self-signed-2981755655
 !
 !
 crypto pki certificate chain SLA-TrustPoint
@@ -81,6 +85,35 @@ crypto pki certificate chain SLA-TrustPoint
   418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
   D697DF7F 28
         quit
+crypto pki certificate chain TP-self-signed-2981755655
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32393831 37353536 3535301E 170D3236 30393134 31313334 
+  30315A17 0D333630 39313331 31333430 315A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 39383137 
+  35353635 35308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100E27D 206EB44F 4D7B211C 7406B84B E7E2B6C9 A2A1D007 D789AEAE 
+  83D430B9 F4750A65 DEAE9BE9 4A830019 8DE530C8 156B4CDE 8EE31AF3 A5399A22 
+  21993E77 CE789AFC 4C287B01 06AE1095 A631B8E0 E84FCDE4 830767DF BB74F220 
+  79A944FD 52BCC9B3 D3C02959 C48629DA 19DAE94A F36F5842 D87C023D 5FCC3E20 
+  66C0FC6B B2B06401 8369A43C 43ADA89C 89F3FA32 0F550074 8BF244BB 62F392EA 
+  101BD3B9 D06168CD 62AC0181 E769DB56 3E501E30 18B937CD 3E9937B1 982DC72C 
+  EFB9E367 258D1355 78DCC9CE 21F335BE 23C41D5A 61B8655C 4C91F90A 909E1EE5 
+  5E6800AD 6C863A6E F576DA43 1336B59D D2EAB5BF F47259BD 48F83AB5 FA7A83CF 
+  91E1FBD9 C4450203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 14DE6598 FEBF71A3 99C57F11 16498C07 DF5B55C6 
+  9E301D06 03551D0E 04160414 DE6598FE BF71A399 C57F1116 498C07DF 5B55C69E 
+  300D0609 2A864886 F70D0101 05050003 82010100 30A169D0 C591D97B 8320C707 
+  7DD4DD39 704233F6 B3E1E5F1 FF281EBA 4CDF3ABC 286103EF 2380B35D FB4C2F58 
+  7A1503E1 12E8872E 85B547B9 1CE3CBE2 666EFE0C 11098428 A8FC3B74 2930B7EA 
+  E6BAF16E E8F34599 13486112 D96AD9F8 8C8F3B66 2FB25BBF 4B78B8E3 1601C71A 
+  A5254E56 DD136250 F886BF01 8D70A5CF 9305E166 D4BBE777 F64CB660 C22B58B5 
+  14326E88 C56491A6 BF7E3EDA 5F806D4D E0701437 4BCD6AC8 4736903B E8245BA8 
+  49EE1624 9A1D8D2E 8AA954BD AB9F009C A4943673 F39E320F 52ED660F FF1520FD 
+  386BD476 25C43914 B08319C9 FE4B66B5 6CFAFB6B 5A7ABEAE CC02AA71 432B49E6 
+  C853839F 07E4F8AC 8D5CD05F AD08C85F 8DF7AA4E
+        quit
 !
 license boot level network-essentials addon dna-essentials
 !
@@ -96,10 +129,10 @@ username perennial privilege 15 secret 9 $9$VmD40l7.pGSaZk$x.XYjePcJYbaM/qnjcLfm
 redundancy
  mode sso
 !
-!         
+!
 transceiver type all
  monitoring
-!
+!         
 !
 class-map match-any system-cpp-police-ewlc-control
   description EWLC Control 
@@ -144,7 +177,7 @@ class-map match-any system-cpp-police-system-critical
   description System Critical and Gold Pkt
 class-map match-any system-cpp-police-ios-feature
   description ICMPGEN,BROADCAST,ICMP,L2LVXCntrl,ProtoSnoop,PuntWebauth,MCASTData,Transit,DOT1XAuth,Swfwd,LOGGING,L2LVXData,ForusTraffic,ForusARP,McastEndStn,Openflow,Exception,EGRExcption,NflSampled,RpfFailed
-!
+!         
 policy-map system-cpp-policy
 !
 ! 
@@ -154,7 +187,7 @@ policy-map system-cpp-policy
 !
 !
 !
-!         
+!
 !
 !
 !
@@ -168,61 +201,73 @@ interface GigabitEthernet1/0/1
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/2
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/3
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/4
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/5
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/6
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/7
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/8
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/9
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/10
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
-!
+ no shutdown
+!         
 interface GigabitEthernet1/0/11
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/12
  description VLAN PRODUCTION
  switchport access vlan 54
  switchport mode access
+ no shutdown
 !
 interface GigabitEthernet1/0/13
 !
@@ -246,6 +291,7 @@ interface GigabitEthernet1/0/22
  description INTER-CO COMMUTATEUR L2
  switchport trunk allowed vlan 10,20
  switchport mode trunk
+ no shutdown
 !
 interface GigabitEthernet1/0/23
 !
@@ -253,13 +299,14 @@ interface GigabitEthernet1/0/24
  description INTER-CO ROUTEUR
  switchport trunk allowed vlan 2,20
  switchport mode trunk
+ no shutdown
 !
 interface GigabitEthernet1/1/1
 !
 interface GigabitEthernet1/1/2
 !
 interface GigabitEthernet1/1/3
-!
+!         
 interface GigabitEthernet1/1/4
 !
 interface Vlan1
@@ -268,21 +315,26 @@ interface Vlan1
 interface Vlan2
  description LIAISON ROUTEUR
  ip address 192.168.44.253 255.255.255.248
+ no shutdown
 !
 interface Vlan10
  description VLAN CLIENTS
  ip address 192.168.4.190 255.255.255.192
+ no shutdown
 !
 interface Vlan20
  description VLAN ADMINISTRATION
  ip address 192.168.4.206 255.255.255.240
+ no shutdown
 !
 interface Vlan54
  description VLAN PRODUCTION
  ip address 192.168.4.126 255.255.255.128
+ no shutdown
 !
 ip forward-protocol nd
 ip http server
+ip http authentication local
 ip http secure-server
 ip route 0.0.0.0 0.0.0.0 192.168.44.254
 ip ssh version 2
@@ -304,7 +356,7 @@ line vty 5 15
  login local
  transport input ssh
 !
-call-home
+call-home 
  ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
  ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
  contact-email-addr sch-smart-licensing@cisco.com
@@ -312,7 +364,7 @@ call-home
   active
   destination transport-method http
 !
-!         
+!
 !
 !
 !
