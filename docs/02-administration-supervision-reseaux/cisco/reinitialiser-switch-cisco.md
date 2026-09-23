@@ -54,8 +54,8 @@ reload
 
 > [!info] Source de configuration
 > Les fichiers de configurations doit être récupéré depuis les sources Git ci-dessous :
-> [https://cub.bts.loutik.fr/network-configs/dmd-sw-c1.txt](https://cub.bts.loutik.fr/network-configs/dmd-sw-c1.txt).
-> [https://cub.bts.loutik.fr/network-configs/dmd-sw-a1.txt](https://cub.bts.loutik.fr/network-configs/dmd-sw-a1.txt).
+> [dmd-sw-c1](https://cub.bts.loutik.fr/network-configs/dmd-sw-c1.txt).
+> [dmd-sw-a1](https://cub.bts.loutik.fr/network-configs/dmd-sw-a1.txt).
 
 4.1. **Accès au mode de configuration.** Élévation des privilèges et passage en mode de configuration globale.
 
