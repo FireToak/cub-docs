@@ -16,7 +16,7 @@ Le projet CUB concerne une entreprise spécialisée dans l'incubation de startup
 
 ## 2. 🗺️ Navigation
 
-La présente documentation est séparée en 4 modules : [Administration et supervision des réseaux](./administration-supervision-reseaux/index.md), [Administration Windows](./administration-windows/index.md), [Cybersécurité](./cybersecurite/index.md), [Exploitation des services](./exploitation-services/index.md) et [Ressources](./ressources/index.md). Dans chaque module, vous retrouverez un dossier par technologie déployée qui contient toutes les procédures liées à cette technologie mise en place. La section Ressources centralise quant à elle la base documentaire commune à l'ensemble de ces modules.
+La présente documentation est séparée en 4 modules : [Administration et supervision des réseaux](./02-administration-supervision-reseaux/index.md), [Administration Windows](./04-administration-windows/index.md), [Cybersécurité](./05-cybersecurite/index.md), [Exploitation des services](./03-exploitation-services/index.md) et [Ressources](./01-ressources/index.md). Dans chaque module, vous retrouverez un dossier par technologie déployée qui contient toutes les procédures liées à cette technologie mise en place. La section Ressources centralise quant à elle la base documentaire commune à l'ensemble de ces modules.
 
 ---
 
