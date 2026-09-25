@@ -52,10 +52,9 @@ reload
 
 ## 4. Déploiement de la configuration {#4-deploiement-de-la-configuration}
 
-> [!info] Source de configuration
-> Les fichiers de configurations doit être récupéré depuis les sources Git ci-dessous :
-> [dmd-sw-c1](https://cub.bts.loutik.fr/01-ressources/configurations/dmd-sw-c1.txt).
-> [dmd-sw-a1](https://cub.bts.loutik.fr/01-ressources/configurations/dmd-sw-a1.txt).
+Les fichiers de configurations doit être récupéré depuis les sources Git ci-dessous :
+[dmd-sw-c1](https://cub.bts.loutik.fr/01-ressources/configurations/dmd-sw-c1.txt).
+[dmd-sw-a1](https://cub.bts.loutik.fr/01-ressources/configurations/dmd-sw-a1.txt).
 
 4.1. **Accès au mode de configuration.** Élévation des privilèges et passage en mode de configuration globale.
 

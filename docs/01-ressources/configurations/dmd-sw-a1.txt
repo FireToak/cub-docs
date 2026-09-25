@@ -1,4 +1,4 @@
-Current configuration : 7064 bytes
+Current configuration : 8642 bytes
 !
 version 12.2
 no service pad
@@ -12,15 +12,17 @@ boot-start-marker
 boot-end-marker
 !
 !
+username perennial privilege 15 secret 5 $1$Mo7O$L6ma5ITsA2BL0zPBKkhp/.
 !
 !
 no aaa new-model
 system mtu routing 1500
-!
+!         
 !
 no ip domain-lookup
+ip domain-name cub.local
 !
-!         
+!
 crypto pki trustpoint TP-self-signed-3205233280
  enrollment selfsigned
  subject-name cn=IOS-Self-Signed-Certificate-3205233280
@@ -55,9 +57,11 @@ crypto pki certificate chain TP-self-signed-3205233280
 !
 spanning-tree mode pvst
 spanning-tree extend system-id
-!
+!         
 vlan internal allocation policy ascending
 !
+ip ssh time-out 60
+ip ssh version 2
 !
 interface FastEthernet0/1
  description Espace Administration
@@ -93,7 +97,7 @@ interface FastEthernet0/5
  switchport mode access
  spanning-tree portfast
  spanning-tree bpduguard enable
-!
+!         
 interface FastEthernet0/6
  description Espace Administration
  switchport access vlan 20
@@ -135,7 +139,7 @@ interface FastEthernet0/11
  switchport mode access
  spanning-tree portfast
  spanning-tree bpduguard enable
-!         
+!
 interface FastEthernet0/12
  description Espace Administration
  switchport access vlan 20
@@ -144,28 +148,52 @@ interface FastEthernet0/12
  spanning-tree bpduguard enable
 !
 interface FastEthernet0/13
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/14
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/15
+ description Port desactive - Securite
+ shutdown 
 !
 interface FastEthernet0/16
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/17
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/18
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/19
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/20
-!         
+ description Port desactive - Securite
+ shutdown 
+!
 interface FastEthernet0/21
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/22
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/23
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/24
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/25
  description Espace Clients
@@ -229,7 +257,7 @@ interface FastEthernet0/33
  switchport mode access
  spanning-tree portfast
  spanning-tree bpduguard enable
-!
+!         
 interface FastEthernet0/34
  description Espace Clients
  switchport access vlan 10
@@ -250,28 +278,50 @@ interface FastEthernet0/36
  switchport mode access
  spanning-tree portfast
  spanning-tree bpduguard enable
-!         
+!
 interface FastEthernet0/37
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/38
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/39
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/40
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/41
+ description Port desactive - Securite
+ shutdown 
 !
 interface FastEthernet0/42
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/43
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/44
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/45
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/46
+ description Port desactive - Securite
+ shutdown 
 !
 interface FastEthernet0/47
+ description Port desactive - Securite
+ shutdown
 !
 interface FastEthernet0/48
  description Uplink Trunk vers SW_L3_Dortmund Gi1/0/22
@@ -279,20 +329,33 @@ interface FastEthernet0/48
  switchport mode trunk
 !
 interface GigabitEthernet0/1
+ description Port desactive - Securite
+ shutdown
 !
 interface GigabitEthernet0/2
+ description Port desactive - Securite
+ shutdown
 !
 interface Vlan1
- ip address dhcp
+ no ip address
+ no ip route-cache
+ shutdown
+!
+interface Vlan20
+ description Interface de management & Administration
+ ip address 192.168.4.204 255.255.255.240
  no ip route-cache
 !
 ip http server
 ip http secure-server
 !
 line con 0
+ logging synchronous
 line vty 0 4
- login
+ login local
+ transport input ssh
 line vty 5 15
- login
-!
+ login local
+ transport input ssh
+!         
 end
