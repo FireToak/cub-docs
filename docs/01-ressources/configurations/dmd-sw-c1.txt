@@ -12,7 +12,6 @@ vrf definition Mgmt-vrf
  address-family ipv6
  exit-address-family
 !
-enable secret 9 $9$0ADMCJI2R6KUDU$8PoM1Frr10OSQaqBv59dHPTjY3xTZYqh.uULoFAtiyo
 !
 !
 !
