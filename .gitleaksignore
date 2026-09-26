@@ -1,0 +1,6 @@
+[allowlist]
+# Ignorer les commits contenant des faux positifs
+commits = [ "04b76d4ed568a160b8d8b85fa507a3c36772dbba" ]
+
+# Ignorer cette chaîne de caractères exacte partout dans le repo
+regexes = [ "StrongPassword123!" ]
