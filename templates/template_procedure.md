@@ -91,7 +91,7 @@ Table :
 
 ## 1. Sommaire
 
-[Génère un sommaire]
+[Génère un sommaire - Exemple : - [<num>. <titre>](#<num>-<titre>) si accent ou caractère non pris en charge utilisation des ancres pour les titres du sommaie]
 
 ## 2. Contexte
 
