@@ -30,7 +30,7 @@ switch 1 provision c9200l-24t-4g
 ip routing
 !         
 no ip domain lookup
-ip domain name dmd-sw-c1.local.dortmund.cub.sioplc.fr
+ip domain name dmd-sw-c1.dortmund.cub.sioplc.fr
 !
 !
 !
