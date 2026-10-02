@@ -34,21 +34,29 @@ Message pour l'ia : Tu mets à jour avec les informations données en entrée da
 
 ### Cybersécurité
 
-* **Stormshield UTM** : implémentation d'une solution de sécurité unifiée pour assurer le filtrage applicatif et contrer les menaces avancées.
+* **Filtrage et contrôle des flux** : configuration des règles de pare-feu, du NAT, des ACL et de UFW afin de contrôler les communications entre les réseaux, les DMZ et Internet.
+* **Sécurisation des accès d'administration** : centralisation des accès SSH et RDP avec le bastion Apache Guacamole, contrôle des habilitations par groupes et authentification TOTP.
+* **Chiffrement des échanges** : mise en place de certificats SSL/TLS, d'un reverse proxy HTTPS et de connexions d'administration sécurisées.
+* **Sauvegarde et traçabilité** : sauvegarde chiffrée des configurations Stormshield et versionnement des fichiers de configuration.
 
 ### Administration et supervision des réseaux
 
-* **Segmentation réseau (VLAN)** : Cloisonnement du réseau local des agences (Production, Clients, Administration) afin de réduire la surface d'exposition aux attaques, selon les recommandations de l'ANSSI.
-* **Routage et adressage public** : Implémentation du plan d'adressage IPv4 LIR de CUB (192.36.253.0/24) et configuration des liaisons inter-agences.
+* **Conception d'une infrastructure réseau** : réalisation des schémas physiques et logiques, du plan d'adressage IPv4 et des tables de routage de l'architecture multisite.
+* **Commutation et segmentation** : configuration des VLAN, du VTP, des commutateurs Cisco de niveau 3 et des sous-interfaces 802.1Q pour isoler les réseaux Production, Clients et Administration.
+* **Routage et services réseau** : mise en œuvre du routage statique, du NAT/PAT et du relais DHCP sur les équipements Cisco et Stormshield.
+* **Administration sécurisée des équipements** : activation de SSH, gestion des niveaux d'accès et validation des configurations à l'aide de fiches de recette.
 
 ### Administration Windows
 
-* **Postes clients Windows** : Gestion et intégration des postes de travail utilisateurs (Windows Client) répartis dans les réseaux locaux des différentes agences de l'incubateur.
+* **Administration des systèmes Windows** : déploiement de Windows Server Core, configuration des postes clients et gestion des accès à distance par RDP.
+* **Services d'annuaire et stratégies** : installation d'Active Directory et du DNS associé, puis déploiement de paramètres et de logiciels au moyen des GPO.
+* **Gestion du parc** : déploiement de l'agent GLPI par GPO afin d'automatiser l'inventaire matériel et logiciel des postes.
 
 ### Exploitation des services
 
-* **Serveurs DNS (Debian)** : Déploiement et administration des serveurs DNS maîtres et esclaves situés en DMZ pour assurer la résolution de noms de domaine de chaque agence.
-* **Serveurs Web (Debian)** : Hébergement et maintien en conditions opérationnelles des services web vitrines de l'entreprise sur l'ensemble des sites.
+* **Services DNS (Debian)** : installation et administration de BIND9 en serveur maître et esclave, création de délégations DNS et mise en place d'un résolveur récursif Unbound.
+* **Gestion des configurations** : administration des paquets et des noms d'hôte Debian, suivi des modifications avec Etckeeper et contrôle des journaux système.
+* **Gestion des services et des demandes** : déploiement de GLPI, structuration des entités et catégories ITIL, création des comptes et suivi de l'inventaire.
 
 ---
 
@@ -56,15 +64,31 @@ Message pour l'ia : Tu mets à jour avec les informations données en entrée da
 
 ### Gérer le patrimoine informatique
 
-* **Recenser et identifier les ressources numériques** : Cartographie des services présents sur le réseau local et analyse de l'adressage IP des différentes agences CUB.
+* **Recenser et identifier les ressources numériques** : réalisation de l'inventaire automatisé des équipements et logiciels dans GLPI, complété par les schémas, le plan d'adressage et les tables de routage.
+* **Exploiter des référentiels, normes et standards** : application des conventions de nommage, des bonnes pratiques de l'ANSSI et des règles de sécurité liées aux VLAN, DMZ et comptes d'administration.
+* **Gérer des sauvegardes** : sauvegarde chiffrée des configurations réseau et conservation de l'historique des fichiers de configuration avec Git et Etckeeper.
 
 ### Mettre à disposition des utilisateurs un service informatique
 
-* **Déployer un service** : Intégration logique et physique des nouvelles appliances UTM et des serveurs Debian (Web/DNS) au sein des DMZ de l'architecture.
+* **Déployer un service** : installation et configuration des services DNS BIND9/Unbound, d'Active Directory, de GLPI et du bastion Guacamole dans l'infrastructure CUB.
+* **Réaliser les tests d'intégration et d'acceptation** : rédaction et exécution de fiches de recette pour vérifier la syntaxe, la résolution DNS, les transferts de zones, les accès SSH/RDP et le filtrage réseau.
+* **Accompagner les utilisateurs dans la mise en place d'un service** : documentation des procédures d'accès, d'administration et de support afin de rendre les services exploitables par les équipes techniques.
 
 ### Répondre aux incidents et aux demandes d’assistance et d’évolution
 
-* **Traiter des demandes concernant les services réseau et système, applicatifs** : Conception de maquettes Packet Tracer et schémas logiques pour répondre aux besoins d'évolution sécuritaire exigés par le service RSSI.
+* **Traiter des demandes concernant les services réseau et système** : diagnostic des erreurs de configuration DNS, des problèmes d'accès SSH/RDP et des incidents liés au pare-feu à partir des journaux et des tests de connectivité.
+* **Traiter des demandes d'évolution** : adaptation du plan d'adressage, du routage, des VLAN et des règles de filtrage pour répondre aux besoins d'évolution de l'infrastructure.
+
+### Concevoir une solution d'infrastructure réseau
+
+* **Choisir les éléments nécessaires à la mise en place de la solution** : sélection et intégration des équipements Cisco, des appliances Stormshield et des serveurs Debian selon les contraintes de l'architecture multisite.
+* **Installer et tester une solution d'infrastructure réseau** : configuration des commutateurs, du routage, du NAT, des relais DHCP et des services de sécurité, puis validation par des tests documentés.
+* **Exploiter, dépanner et superviser une solution d'infrastructure réseau** : maintien en conditions opérationnelles des équipements et services, analyse des journaux et utilisation des fiches de recette pour contrôler leur disponibilité.
+
+### Travailler en mode projet
+
+* **Analyser les objectifs et les contraintes** : prise en compte des besoins de segmentation, de disponibilité et de sécurité de l'entreprise CUB dans la conception de l'infrastructure.
+* **Produire et mettre à jour une documentation technique** : formalisation des procédures, schémas, configurations et recettes dans une base documentaire versionnée.
 
 ---
 
