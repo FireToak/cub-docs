@@ -156,17 +156,17 @@ $SecureDSRMPassword = ConvertTo-SecureString "P@ssw0rdDSRM_CUB!" -AsPlainText -F
 
 # Promouvoir le serveur, installer le DNS et redémarrer automatiquement
 Install-ADDSForest `
-    -CreateDnsDelegation $false `
+    -CreateDnsDelegation:$false `
     -DatabasePath "C:\Windows\NTDS" `
     -DomainMode "WinThreshold" `
     -DomainName "DOMAIN.LAN" `
     -DomainNetbiosName "DOMAIN" `
     -ForestMode "WinThreshold" `
-    -InstallDns $true `
+    -InstallDns:$true `
     -LogPath "C:\Windows\NTDS" `
-    -NoRebootOnCompletion $false `
+    -NoRebootOnCompletion:$false `
     -SysvolPath "C:\Windows\SYSVOL" `
-    -Force $true `
+    -Force:$true `
     -SafeModeAdministratorPassword $SecureDSRMPassword
 ```
 
