@@ -16,14 +16,14 @@
 
 - [1. Sommaire](#1-sommaire)
 - [2. Contexte](#2-contexte)
-- [3. Création, déplacement et suppression](#3-création-déplacement-et-suppression)
-- [4. Gestion des fichiers (Lecture et Écriture)](#4-gestion-des-fichiers-lecture-et-écriture)
+- [3. Création, déplacement et suppression](#3-creation-deplacement-et-suppression)
+- [4. Gestion des fichiers (Lecture et Écriture)](#4-gestion-des-fichiers-lecture-et-ecriture)
 
 ## 2. Contexte
 
 Cette procédure définit les standards de manipulation du système de fichiers (fichiers, répertoires, flux de données) via PowerShell. Ces opérations sont cruciales pour l'automatisation de l'infrastructure (IaC), le traitement des fichiers de journalisation et la gestion des exports structurels pour les scripts d'administration.
 
-## 3. Création, déplacement et suppression
+## 3. Création, déplacement et suppression {#3-creation-deplacement-et-suppression}
 
 3.1. **Explorer l'arborescence.** Utilisation des cmdlets pour localiser le contexte d'exécution et lister les éléments.
 
@@ -75,7 +75,7 @@ Remove-Item "c:\temp\*.txt"
 
 - `Remove-Item` : Détruit définitivement les éléments spécifiés par le chemin. L'utilisation du wildcard `*.txt` supprime tous les fichiers texte du répertoire.
 
-## 4. Gestion des Fichiers (Lecture et Écriture)
+## 4. Gestion des Fichiers (Lecture et Écriture) {#4-gestion-des-fichiers-lecture-et-ecriture}
 
 4.1.  **Lire et analyser un fichier.** Extraction et traitement algorithmique des données textuelles sous forme de collection d'objets.
 
