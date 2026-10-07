@@ -36,3 +36,15 @@ L'objectif de cette procédure est de standardiser l'instanciation des accès di
 - `Authentification` : Saisir l'**identifiant**, le **mot de passe**. Puis mettre le mode de sécurité à **NLA** et **Faire confiance au certificat de l'hôte lors de la première utilisation**.
 
 ![Configuration de la connexion RDP](./assets/creer-connexion-rdp-windows/02-configuration-connexion.png)
+
+3.3. **Configuration de l'enregistrement de session.** Toujours dans la section *Paramètres de la connexion*, activer l'enregistrement d'écran et la capture des événements clavier afin d'assurer la traçabilité et l'auditabilité des interventions sur le bastion.
+
+> [!info] Standardisation du stockage
+> L'utilisation des variables `${HISTORY_PATH}` et `${HISTORY_UUID}` permet de générer dynamiquement l'arborescence et le nommage des fichiers d'enregistrement, s'alignant ainsi sur les bonnes pratiques de provisionnement.
+
+- Chemin de l'enregistrement : `${HISTORY_PATH}/${HISTORY_UUID}`
+- Inclure les événements clavier : `Coché`
+- Créer automatiquement le chemin d'enregistrement : `Coché`
+- Autoriser l'écriture dans le fichier d'enregistrement existant : `Coché`
+
+![Configuration enregistrement d'écran](./assets/configuration-enregistrement-connexions/02-configuration-connexion.png)

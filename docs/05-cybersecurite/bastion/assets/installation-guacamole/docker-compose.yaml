@@ -8,6 +8,7 @@ services:
     restart: always
     volumes:
       - ./drive:/drive:rw
+      - ./session-recording:/var/lib/guacamole/recordings:rw
 
   # postgres
   postgres:
@@ -36,6 +37,8 @@ services:
       - guacd
       - postgres
     environment:
+      TOTP_ENABLED: "true"
+      RECORDING_ENABLED: "true"
       GUACD_HOSTNAME: guacd
       POSTGRESQL_ENABLED: "true"
       REMOTE_IP_VALVE_ENABLED: "true"
@@ -47,6 +50,8 @@ services:
     networks:
       - guacnetwork
     restart: always
+    volumes:
+      - ./session-recording:/var/lib/guacamole/recordings:rw
 
   # nginx
   nginx:

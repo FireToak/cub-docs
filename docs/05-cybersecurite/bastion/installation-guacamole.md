@@ -95,6 +95,9 @@ vim /opt/guacamole/.env
 5.2. **Déclaration des services.** Configuration du fichier définissant les services Guacamole, PostgreSQL et Nginx.
 
 ```bash title="Création de la stack Docker Compose"
+# Créer le dossier pour stocker les enregistrements de sessions
+mkdir /opt/guacamole/session-recording
+
 vim /opt/guacamole/docker-compose.yml
 ```
 
