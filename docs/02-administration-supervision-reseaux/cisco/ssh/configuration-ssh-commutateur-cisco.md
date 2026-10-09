@@ -53,6 +53,11 @@ SW-CORE-01(config)# crypto key generate rsa modulus 2048
 
 ```
 
+*Sur les anciens commutateurs :*
+```text
+ec-sw-a1(config)# crypto key generate rsa general-keys modulus 2048
+```
+
 * `crypto key generate rsa` : Lance le moteur de création de clés pour l'algorithme RSA.
 * `modulus 2048` : Définit la taille de la clé à 2048 bits, norme standard actuelle pour une sécurité robuste (minimum 1024 requis pour SSHv2).
 
