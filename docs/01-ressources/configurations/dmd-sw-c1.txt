@@ -252,6 +252,8 @@ interface Vlan2
 interface Vlan10
  description VLAN CLIENTS
  ip address 192.168.4.190 255.255.255.192
+ ip helper-address 192.168.4.3
+ ip helper-address 192.168.4.4
  no shutdown
 !
 interface Vlan20
