@@ -20,8 +20,16 @@ L'utilitaire Sysprep (System Preparation) prépare une installation Windows pour
 
 3.1.  **Lancement de la préparation du système.** Exécuter la commande de généralisation dans une invite de commandes (cmd) avec les privilèges administrateur.
 
+**CMD :**
+
 ```cmd
 %WINDIR%\system32\sysprep\sysprep.exe /generalize /oobe /shutdown
+```
+
+**Powershell :**
+
+```Powershell
+& "$env:WINDIR\System32\sysprep\sysprep.exe" /generalize /oobe /shutdown
 ```
 
 - `%WINDIR%\system32\sysprep\sysprep.exe` : Fichier exécutable principal de l'outil de préparation système de Windows.
