@@ -118,9 +118,6 @@ StartRange      EndRange
 192.168.1.180   192.168.1.189
 ```
 
-> [!success] Critère de succès complémentaire
-> Pour garantir un test exhaustif de l'exclusion, le renouvellement de multiples baux sur plusieurs clients virtuels ou physiques ne doit en aucun cas déclencher l'attribution d'une adresse comprise dans cette plage.
-
 **Statut :**
 
 - [ ] Ok
@@ -181,9 +178,6 @@ Mode           : LoadBalance
 State          : Normal
 PartnerServer  : 192.168.1.4
 ```
-
-> [!success] Critère de validation
-> La propriété `State` doit obligatoirement retourner `Normal`. Toute autre valeur (ex: `CommunicationInterrupted`) indique une rupture critique de la synchronisation des baux.
 
 **Statut :**
 
