@@ -263,7 +263,7 @@ interface Vlan20
 !
 interface Vlan53
  description VLAN BASTION
- ip address 192.168.4.214 255.255.255.240
+ ip address 192.168.4.214 255.255.255.248
  no shutdown
 !
 interface Vlan54
